@@ -27,4 +27,35 @@ yarn-error.log*
 
 # Dossiers temporaires
 tmp/
-temp/ 
+temp/
+
+# Fichiers compilés et build
+dist/
+build/
+*.min.js
+*.min.css
+*.map
+
+# Dépendances
+node_modules/
+package-lock.json
+
+# Fichiers de configuration locaux
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Fichiers de sauvegarde
+*.bak
+*.backup
+*~
+
+# Fichiers de test
+coverage/
+.nyc_output/
+
+# Fichiers de déploiement
+.vercel
+.netlify 
