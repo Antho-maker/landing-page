@@ -57,12 +57,11 @@ html {
 }
 
 body {
+    background: var(--background-color);
     font-family: 'Inter', sans-serif;
     color: var(--text-color);
     line-height: 1.6;
-    font-size: 16px;
-    background: var(--background-color);
-    overflow-x: hidden;
+    margin: 0;
 }
 
 /* Sections avec background pattern */
@@ -195,9 +194,19 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('../images/background hero.png') no-repeat center center;
-    background-size: cover;
-    z-index: 1;
+    background: rgba(0,0,0,0.2); /* Overlay pour la lisibilité du texte */
+    z-index: 0;
+}
+
+.hero-background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 0;
 }
 
 .hero > * {
@@ -1284,4 +1293,102 @@ section {
     transform: scaleX(1.1);
     transform-origin: center;
     padding: 0 2rem;
+}
+
+/* Styles for landing2 hero section */
+.landing2 .hero {
+    position: relative;
+    overflow: hidden;
+    align-items: stretch;
+    padding: 0;
+    height: 100vh;
+}
+
+.hero-background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* Spécifique à landing2 */
+.landing2 .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.2); /* Overlay pour la lisibilité du texte */
+    z-index: 2;
+}
+
+.landing2 .hero-container-2 {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-bottom: 10vh;
+    width: 100%;
+    max-width: 960px;
+}
+
+.landing2 .hero-text-2 {
+    max-width: none;
+    text-align: left;
+}
+
+.landing2 .h1-hero-2,
+.landing2 .p-hero-2 {
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+}
+
+.landing2 .h1-hero-2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 0.8;
+    margin-bottom: 1.5rem;
+}
+
+.landing2 .h1-hero-2 span {
+    background-color: #9BAD61;
+    padding: 0.1em 0.3em;
+    line-height: 1;
+    border-radius: 5px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+.landing2 .p-hero-2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.5;
+    max-width: 550px;
+    margin-top: 1.5rem;
+}
+
+.landing2 .hero-buttons-2 {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-left: 0;
+    margin-top: 2rem;
+}
+
+.landing2 .hero-buttons-2 a img {
+    height: 60px;
+    width: auto;
+}
+
+/* --- Media Queries --- */
+@media (max-width: 768px) {
+    /* Styles pour landing2 gérés dans landing2.css pour éviter les conflits */
 } 

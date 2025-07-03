@@ -1,0 +1,727 @@
+/* =============== STYLES DE BASE (migrés de landing.css) =============== */
+
+/* Variables globales */
+:root {
+    --background-color: #FAF5E4;
+    --text-color: #2C2C2C;
+    --accent-color: #4A4A4A;
+    --spacing-unit: 2rem;
+    --container-width: 1200px;
+}
+
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--background-color);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Container */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-unit);
+    position: relative;
+    z-index: 2;
+}
+
+/* Styles de base pour les titres */
+h1 {
+    font-size: 3.5rem;
+    margin: 0 0 0.5rem 0;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem 0;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+}
+
+p {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Divider */
+.divider {
+    height: 30px;
+    background: url('../images/divider boucles.png') repeat-x center;
+    background-size: auto 100%;
+    position: relative;
+    z-index: 10;
+    opacity: 0.7;
+    margin: 0;
+}
+
+.divider-hero {
+    margin-top: -30px;
+    margin-bottom: -15px;
+}
+
+.divider-cta {
+    margin-bottom: -15px;
+}
+
+
+/* Section Citations */
+/* Ancien style de carrousel - Supprimé */
+/*
+.quotes {
+    padding: 6rem 0;
+    overflow: hidden;
+}
+
+.quotes-container {
+    max-width: 100%;
+    padding: 0;
+}
+
+.quotes-track {
+    display: flex;
+    width: fit-content;
+    animation: scroll 60s linear infinite;
+}
+
+.quote {
+    flex-shrink: 0;
+    width: 600px; 
+    padding: 0 2rem;
+}
+
+.quote img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+*/
+
+/* --- Nouveau Slider de Témoignages --- */
+.testimonial-slider {
+    position: relative;
+    padding: 8rem 0;
+    background-color: var(--background-color);
+    text-align: center;
+    overflow: hidden;
+}
+
+.slider-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.slide {
+    display: none;
+}
+
+.slide.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.portrait {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1.5rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.quote-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.rating {
+    font-size: 1.5rem;
+    color: #FFC700; /* Jaune doré pour les étoiles */
+    margin-top: 2rem; /* Augmentation de la marge pour l'espace */
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 3rem;
+    color: var(--accent-color);
+    cursor: pointer;
+    padding: 1rem;
+    z-index: 10;
+    transition: color 0.2s ease;
+}
+
+.slider-arrow:hover {
+    color: var(--text-color);
+}
+
+.slider-arrow.prev {
+    left: 2rem;
+}
+
+.slider-arrow.next {
+    right: 2rem;
+}
+
+/* =============== STYLES SPÉCIFIQUES À LANDING 2 =============== */
+
+/* --- Hero Section --- */
+.landing2 .hero {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.hero-background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.landing2 .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+.landing2 .hero-container-2 {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    padding: 0 4rem 10vh;
+}
+
+.hero-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: end;
+    width: 100%;
+}
+
+.landing2 .hero-text-2 {
+    text-align: left;
+}
+
+.landing2 .h1-hero-2,
+.landing2 .p-hero-2 {
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+}
+
+.landing2 .h1-hero-2 {
+    font-size: 3.8rem;
+    line-height: 1.25;
+    margin: 0;
+}
+
+.landing2 .h1-hero-2 span {
+    background-color: #9BAD61;
+    padding: 0.1em 0.3em;
+    line-height: 1;
+    border-radius: 5px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+.landing2 .p-hero-2 {
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+}
+
+.landing2 .hero-buttons-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.landing2 .hero-buttons-2 a img {
+    height: 80px;
+}
+
+.info-section-2 {
+    padding: 8rem 0;
+    background-color: #6A8B69;
+    text-align: center;
+}
+
+.info-container-2 {
+    max-width: 900px; /* Aligné sur le style de la section philosophie */
+}
+
+.info-container-2 h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    line-height: 1.4;
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+/* Final CTA Section */
+.final-cta-2 {
+    position: relative;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0 4rem 10vh;
+}
+
+.final-cta-background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.final-cta-2::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.1);
+    z-index: 2;
+}
+
+.final-cta-content-wrapper {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: end;
+    width: 100%;
+    max-width: var(--container-width);
+}
+
+.final-cta-text-2 h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    line-height: 1.4;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    margin: 0;
+}
+
+.final-cta-text-2 h2 span {
+    background-color: #9BAD61;
+    color: white;
+    padding: 0.1em 0.3em;
+    line-height: 1.3;
+    border-radius: 5px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+.final-cta-buttons-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.final-cta-buttons-2 a img {
+    height: 75px;
+}
+
+/* Philosophy Section */
+.philosophy-section {
+    background-color: #6A8B69;
+    padding: 8rem 0;
+    text-align: center;
+}
+
+.philosophy-section .container {
+    max-width: 900px;
+}
+
+.philosophy-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: #FFFFFF;
+    margin-bottom: 3rem;
+}
+
+.philosophy-section p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.8rem;
+    line-height: 1.7;
+    color: #FFFFFF;
+}
+
+/* FAQ Section */
+.faq-section {
+    background-color: #FAF5E4;
+    padding: 6rem 0;
+}
+
+.faq-section h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 4rem;
+}
+
+.faq-item {
+    border-bottom: 1px solid #e0d9c8;
+    padding: 1.5rem 0;
+}
+
+.faq-question {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 2rem;
+    color: #333;
+    transition: transform 0.3s ease;
+}
+
+.faq-question:hover::after {
+    transform: rotate(45deg);
+}
+
+.faq-item.open .faq-question::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out; /* Transition simplifiée */
+}
+
+.faq-item.open .faq-answer {
+    max-height: 500px; /* Valeur assez grande pour contenir la réponse */
+}
+
+.faq-answer p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0;
+    background-color: #FFFFFF;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem; /* Espace entre la question et la réponse */
+}
+
+/* --- Section Scrollytelling --- */
+.scrolly-stories {
+    background-color: #FAF5E4;
+    padding: 4rem 0;
+}
+
+.scrolly-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Rétablit les 2 colonnes sur Desktop */
+    gap: 4rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto 10rem;
+    padding: 0 2rem;
+    text-align: left; /* Rétablit l'alignement du texte */
+}
+
+.scrolly-item--reversed {
+    direction: rtl; /* Rétablit l'alternance G/D */
+}
+
+.scrolly-item--reversed > * {
+    direction: ltr;
+}
+
+.scrolly-media {
+    /* position: sticky; est bien retiré */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: auto; /* Rétablit la largeur automatique */
+    max-width: none;
+}
+
+.scrolly-media video,
+.scrolly-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+}
+
+/* Ajustements pour les mockups pour éviter qu'ils soient tronqués */
+.mockup-stories .scrolly-media {
+    background-color: transparent;
+    box-shadow: none; /* On retire l'ombre qui crée un cadre disgracieux */
+}
+
+.mockup-stories .scrolly-media video,
+.mockup-stories .scrolly-media img {
+    object-fit: contain; /* S'assure que toute l'image/vidéo est visible */
+    object-position: center; /* Centre le contenu */
+}
+
+.scrolly-text {
+    padding: 2rem 0; /* Padding raisonnable sans effet sticky */
+    max-width: 450px;
+    justify-self: center;
+}
+
+.scrolly-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.scrolly-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Style de surlignage unifié */
+.highlight {
+    background-color: #9BAD61;
+    color: white;
+    padding: 0.1em 0.3em;
+    border-radius: 5px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+/* Ancien style de texte, maintenant géré par .scrolly-text h2 et p */
+.scrolly-stories:first-of-type .scrolly-text {
+    max-width: 400px;
+    justify-self: center;
+}
+
+.scrolly-stories:last-of-type .scrolly-text {
+     max-width: 450px;
+}
+
+/* --- Media Queries --- */
+
+@media (max-width: 768px) {
+    /* == Hero Section Mobile == */
+    .landing2 .hero {
+        align-items: stretch; /* Permet au conteneur enfant de prendre toute la hauteur */
+    }
+    .landing2 .hero-container-2 {
+        padding: 4rem 1.5rem 2rem; /* Plus de padding en haut */
+        height: 100%;
+        display: flex;
+    }
+    .hero-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Place le texte en haut et les boutons en bas */
+        width: 100%;
+        gap: 2rem;
+    }
+    .landing2 .hero-text-2 {
+        text-align: left;
+    }
+    .landing2 .h1-hero-2 {
+        font-size: 2.6rem;
+    }
+    .landing2 .p-hero-2 {
+        font-size: 1.3rem;
+    }
+    .landing2 .hero-buttons-2 {
+        flex-direction: row;
+        justify-content: center;
+        padding-bottom: 2rem; /* Espace en bas */
+    }
+    .landing2 .hero-buttons-2 a img {
+        height: 65px;
+    }
+
+    /* == Final CTA Section Mobile == */
+    .final-cta-2 {
+        padding: 0 1rem 8vh;
+        align-items: center;
+    }
+    .final-cta-content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        justify-items: center;
+    }
+    .final-cta-text-2 {
+        text-align: center;
+    }
+    .final-cta-text-2 h2 {
+        font-size: 2.2rem;
+    }
+    .final-cta-buttons-2 {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .final-cta-buttons-2 a img {
+        height: 65px;
+    }
+
+    /* == Scrollytelling Section Mobile == */
+    .scrolly-item,
+    .scrolly-item--reversed {
+        display: grid;
+        grid-template-areas:
+            "title"
+            "media";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        padding: 4rem 0; /* Pas de padding horizontal sur le conteneur */
+        gap: 2rem;
+        min-height: auto;
+    }
+
+    .scrolly-item--reversed {
+        direction: ltr;
+    }
+
+    .scrolly-media {
+        grid-area: media;
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        margin: 0 1rem; /* Marge pour l'espacement horizontal */
+    }
+
+    /* Le conteneur .scrolly-text est "dissous" pour que ses enfants deviennent des items de la grille */
+    .scrolly-text {
+        display: contents; 
+    }
+
+    .scrolly-text h2 {
+        grid-area: title;
+        text-align: center;
+        padding: 0 1rem; /* Conserve son propre padding */
+    }
+    
+    .scrolly-text p {
+        grid-area: media; /* Placé dans la MÊME zone que l'image/vidéo */
+        position: relative;
+        z-index: 3;
+        align-self: end; /* Aligné en bas de la zone "media" */
+        
+        color: white;
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+        font-size: 1.3rem;
+        line-height: 1.4;
+        text-align: center;
+        margin: 0;
+        padding: 2rem 1.5rem; /* Padding pour l'espacement intérieur */
+    }
+
+    /* Dégradé pour la lisibilité */
+    .scrolly-media::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60%;
+        background: linear-gradient(to top, rgba(0,0,0,0.7) 20%, transparent);
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    /* Style du surlignage pour le mode sous-titre */
+    .scrolly-text p .highlight {
+        background-color: transparent;
+        color: #B9D4B7;
+        padding: 0;
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 480px) {
+    .landing2 .h1-hero-2 {
+        font-size: 2rem;
+    }
+    .landing2 .p-hero-2 {
+        font-size: 1rem;
+    }
+}
+
+.guidance-section {
+    background-color: #6A8B69;
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.guidance-section p {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #FFFFFF;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.5;
+} 

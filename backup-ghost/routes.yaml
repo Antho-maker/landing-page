@@ -1,0 +1,13 @@
+routes:
+  /:
+    template: landing2
+    data: page.index
+
+collections:
+  /:
+    permalink: /{slug}/
+    template: index
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/
