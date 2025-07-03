@@ -1,0 +1,20 @@
+# Configuration GitHub Pages
+title: Zazoo Landing Page
+description: Landing page statique pour Zazoo
+baseurl: ""
+url: ""
+
+# Désactiver Jekyll pour site statique
+plugins: []
+markdown: kramdown
+
+# Autoriser les fichiers non-Jekyll
+include: [".htaccess"]
+exclude: ["node_modules", "backup-ghost"]
+
+# Headers personnalisés
+headers:
+  - path: /assets/
+    headers:
+      - key: Cache-Control
+        value: "public, max-age=31536000" 
