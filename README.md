@@ -92,6 +92,7 @@ cp backup-ghost/* .
 # Installer les dépendances
 npm install
 
+
 # Lancer le serveur
 npm start
 ```
