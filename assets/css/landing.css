@@ -1,8 +1,15 @@
 /* Variables globales */
 :root {
-    --background-color: #FAF5E4;
-    --text-color: #2C2C2C;
-    --accent-color: #4A4A4A;
+    --zazoo-green: #7BB174;
+    --zazoo-orange: #F4B940;
+    --zazoo-red: #DE3D3D;
+    --zazoo-blue: #36454F;
+    --zazoo-cream: #FFF6D8;
+    --background-color: var(--zazoo-cream);
+    --text-color: var(--zazoo-blue);
+    --accent-color: var(--zazoo-green);
+    --cta-color: var(--zazoo-orange);
+    --cta-hover: var(--zazoo-red);
     --spacing-unit: 2rem;
     --container-width: 1200px;
 }
@@ -689,7 +696,7 @@ section {
 }
 
 .offer .cta-button {
-    background-color: #2E856E;
+    background-color: var(--cta-color);
     color: white;
     font-size: 1.1rem;
     padding: 1rem 2rem;
@@ -698,7 +705,7 @@ section {
 
 .offer .cta-button:hover {
     transform: translateY(-2px);
-    background-color: #236B58;
+    background-color: var(--cta-hover);
 }
 
 /* Scribbles */
@@ -1358,7 +1365,7 @@ section {
 }
 
 .landing2 .h1-hero-2 span {
-    background-color: #9BAD61;
+    background-color: var(--zazoo-green);
     padding: 0.1em 0.3em;
     line-height: 1;
     border-radius: 5px;
