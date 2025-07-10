@@ -1139,7 +1139,7 @@ p {
 }
 
 .flash-card-back {
-    background: linear-gradient(135deg, var(--zazoo-green) 0%, var(--zazoo-blue) 100%);
+    background: var(--zazoo-green);
     transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
