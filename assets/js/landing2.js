@@ -101,4 +101,145 @@ document.addEventListener('DOMContentLoaded', () => {
         // Show the first slide initially
         showSlide(currentSlide);
     }
+
+    // Flash Cards Mobile Interaction
+    const flashCards = document.querySelectorAll('.flash-card');
+    if (flashCards.length > 0) {
+        flashCards.forEach(card => {
+            const cardInner = card.querySelector('.flash-card-inner');
+            let isFlipped = false;
+
+            // Fonction pour retourner la carte
+            function flipCard() {
+                isFlipped = !isFlipped;
+                if (isFlipped) {
+                    cardInner.style.transform = 'rotateY(180deg)';
+                } else {
+                    cardInner.style.transform = 'rotateY(0deg)';
+                }
+            }
+
+            // Fonction pour remettre toutes les autres cartes à l'état initial
+            function resetOtherCards() {
+                flashCards.forEach(otherCard => {
+                    if (otherCard !== card) {
+                        const otherCardInner = otherCard.querySelector('.flash-card-inner');
+                        otherCardInner.style.transform = 'rotateY(0deg)';
+                        // Réinitialiser l'état interne des autres cartes
+                        otherCard.isFlipped = false;
+                    }
+                });
+            }
+
+            // Gestion du tap/click sur mobile
+            card.addEventListener('click', function(e) {
+                // Vérifier si on est sur mobile (largeur < 768px)
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    
+                    // Si on retourne cette carte, remettre les autres à l'état initial
+                    if (!isFlipped) {
+                        resetOtherCards();
+                    }
+                    
+                    flipCard();
+                    card.isFlipped = isFlipped; // Stocker l'état pour les autres cartes
+                }
+            });
+
+            // Gestion du hover pour desktop (garder l'existant)
+            if (window.innerWidth > 768) {
+                card.addEventListener('mouseenter', function() {
+                    cardInner.style.transform = 'rotateY(180deg)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    cardInner.style.transform = 'rotateY(0deg)';
+                });
+            }
+        });
+    }
+}); 
+
+// Email signup functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Email validation function
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    // Handle email submission
+    async function handleEmailSubmit(emailInput, submitButton, successDiv) {
+        const email = emailInput.value.trim();
+        
+        if (!isValidEmail(email)) {
+            alert('Veuillez entrer une adresse email valide.');
+            return;
+        }
+
+        // Disable button and show loading state
+        submitButton.disabled = true;
+        submitButton.textContent = 'Envoi...';
+
+        try {
+            const response = await fetch('https://n8n.zazoo.ai/webhook/LP-subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: email })
+            });
+
+            if (response.ok) {
+                // Show success message
+                successDiv.style.display = 'block';
+                emailInput.style.display = 'none';
+                submitButton.style.display = 'none';
+            } else {
+                throw new Error('Erreur lors de l\'envoi');
+            }
+        } catch (error) {
+            console.error('Erreur:', error);
+            alert('Erreur lors de l\'envoi. Veuillez réessayer.');
+            submitButton.disabled = false;
+            submitButton.textContent = 'Je teste Zazoo';
+        }
+    }
+
+    // Hero form
+    const heroEmail = document.getElementById('hero-email');
+    const heroSubmit = document.getElementById('hero-submit');
+    const heroSuccess = document.getElementById('hero-success');
+
+    if (heroSubmit) {
+        heroSubmit.addEventListener('click', () => {
+            handleEmailSubmit(heroEmail, heroSubmit, heroSuccess);
+        });
+    }
+
+    // CTA form
+    const ctaEmail = document.getElementById('cta-email');
+    const ctaSubmit = document.getElementById('cta-submit');
+    const ctaSuccess = document.getElementById('cta-success');
+
+    if (ctaSubmit) {
+        ctaSubmit.addEventListener('click', () => {
+            handleEmailSubmit(ctaEmail, ctaSubmit, ctaSuccess);
+        });
+    }
+
+    // Enter key support
+    [heroEmail, ctaEmail].forEach(input => {
+        if (input) {
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    const submitButton = input.id === 'hero-email' ? heroSubmit : ctaSubmit;
+                    const successDiv = input.id === 'hero-email' ? heroSuccess : ctaSuccess;
+                    handleEmailSubmit(input, submitButton, successDiv);
+                }
+            });
+        }
+    });
 }); 

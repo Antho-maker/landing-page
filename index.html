@@ -27,8 +27,13 @@
                         <p class="p-hero-2">Et si tu laissais ton esprit respirer un peu ?<br>Zazoo. Pour penser plus libre. Et vivre plus léger.</p>
                     </div>
                     <div class="hero-buttons-2">
-                        <a href="https://qr.zazoo.life" target="_blank"><img src="assets/images/apple_store.png" alt="Download on the App Store" class="store-logo"></a>
-                        <a href="https://qr.zazoo.life" target="_blank"><img src="assets/images/play_store.png" alt="Get it on Google Play" class="store-logo"></a>
+                        <div class="email-signup-form">
+                            <input type="email" id="hero-email" placeholder="Ton email" class="email-input" required>
+                            <button type="button" id="hero-submit" class="email-submit">Je teste Zazoo</button>
+                            <div id="hero-success" class="email-success" style="display: none;">
+                                <p>✅ Bien enregistré !</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
            </div>
@@ -55,7 +60,7 @@
                 </div>
                 <div class="flash-cards-grid">
                     <!-- Carte 1: Sparring -->
-                    <div class="flash-card">
+                    <div class="flash-card flash-card-sparring">
                         <div class="flash-card-inner">
                             <div class="flash-card-front">
                                 <video autoplay loop muted playsinline src="assets/videos/dreaming.mp4"></video>
@@ -72,7 +77,7 @@
                     </div>
 
                     <!-- Carte 2: Scribe -->
-                    <div class="flash-card">
+                    <div class="flash-card flash-card-scribe">
                         <div class="flash-card-inner">
                             <div class="flash-card-front">
                                 <video autoplay loop muted playsinline src="assets/videos/walking.mp4"></video>
@@ -89,7 +94,7 @@
                     </div>
 
                     <!-- Carte 3: Explore -->
-                    <div class="flash-card">
+                    <div class="flash-card flash-card-explore">
                         <div class="flash-card-inner">
                             <div class="flash-card-front">
                                 <video autoplay loop muted playsinline src="assets/videos/working.mp4"></video>
@@ -106,7 +111,7 @@
                     </div>
 
                     <!-- Carte 4: Chill -->
-                    <div class="flash-card">
+                    <div class="flash-card flash-card-chill">
                         <div class="flash-card-inner">
                             <div class="flash-card-front">
                                 <video autoplay loop muted playsinline src="assets/videos/cooking.mp4"></video>
@@ -268,8 +273,13 @@
                     </div>
                 </div>
                 <div class="final-cta-buttons-2 cta-flex-buttons">
-                    <a href="https://qr.zazoo.life" target="_blank"><img src="assets/images/apple_store.png" alt="Download on the App Store" class="store-logo"></a>
-                    <a href="https://qr.zazoo.life" target="_blank"><img src="assets/images/play_store.png" alt="Get it on Google Play" class="store-logo"></a>
+                    <div class="email-signup-form">
+                        <input type="email" id="cta-email" placeholder="Ton email" class="email-input" required>
+                                                    <button type="button" id="cta-submit" class="email-submit">Je teste Zazoo</button>
+                        <div id="cta-success" class="email-success" style="display: none;">
+                            <p>✅ Bien enregistré !</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
