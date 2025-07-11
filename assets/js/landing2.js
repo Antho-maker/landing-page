@@ -1,6 +1,34 @@
 // Scripts spécifiques pour la landing page 2 
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Force video autoplay on mobile devices
+    function forceVideoAutoplay() {
+        const videos = document.querySelectorAll('video[autoplay]');
+        videos.forEach(video => {
+            // Essayer de jouer la vidéo
+            const playPromise = video.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log('Autoplay prevented:', error);
+                    // Sur mobile, essayer de jouer après un interaction utilisateur
+                    const playVideo = () => {
+                        video.play().catch(e => console.log('Still cannot play:', e));
+                        document.removeEventListener('touchstart', playVideo);
+                        document.removeEventListener('click', playVideo);
+                    };
+                    
+                    document.addEventListener('touchstart', playVideo, { once: true });
+                    document.addEventListener('click', playVideo, { once: true });
+                });
+            }
+        });
+    }
+
+    // Appeler la fonction immédiatement et après un délai
+    forceVideoAutoplay();
+    setTimeout(forceVideoAutoplay, 1000);
+
     // FAQ Accordion
     const faqItems = document.querySelectorAll('.faq-item');
     if (faqItems.length > 0) {
