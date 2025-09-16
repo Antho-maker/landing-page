@@ -1,0 +1,569 @@
+/* =============== ZAZOO EDITOR STYLES =============== */
+
+/* Variables globales pour ZazooEditor */
+:root {
+    --editor-primary: #2563eb;
+    --editor-secondary: #1e40af;
+    --editor-accent: #f59e0b;
+    --editor-success: #10b981;
+    --editor-warning: #f59e0b;
+    --editor-danger: #ef4444;
+    --editor-dark: #1f2937;
+    --editor-light: #f8fafc;
+    --editor-gray: #6b7280;
+    --editor-gray-light: #e5e7eb;
+    --background-color: var(--editor-light);
+    --text-color: var(--editor-dark);
+    --accent-color: var(--editor-primary);
+    --cta-color: var(--editor-accent);
+    --cta-hover: var(--editor-secondary);
+    --spacing-unit: 2rem;
+    --container-width: 1200px;
+}
+
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body.zazoo-editor {
+    background: var(--background-color);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Container */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-unit);
+    position: relative;
+    z-index: 2;
+}
+
+/* =============== HERO SECTION =============== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: white;
+}
+
+.hero-content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-text {
+    margin-bottom: 3rem;
+}
+
+.h1-hero {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.p-hero {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    opacity: 0.95;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, var(--cta-color) 0%, var(--cta-hover) 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+}
+
+.cta-button.large {
+    padding: 1.25rem 2.5rem;
+    font-size: 1.25rem;
+}
+
+/* =============== INTRO SECTION =============== */
+.intro-section {
+    padding: 4rem 0;
+    background: white;
+}
+
+.intro-container {
+    text-align: center;
+}
+
+.intro-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--editor-primary);
+    margin-bottom: 1.5rem;
+}
+
+.intro-content p {
+    font-size: 1.25rem;
+    color: var(--editor-gray);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* =============== FEATURES SECTION =============== */
+.features-section {
+    padding: 4rem 0;
+    background: var(--editor-light);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid var(--editor-gray-light);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--editor-primary);
+    margin-bottom: 0.5rem;
+}
+
+.feature-subtitle {
+    font-size: 1.1rem;
+    color: var(--editor-gray);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.feature-list {
+    list-style: none;
+}
+
+.feature-list li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+    color: var(--editor-dark);
+}
+
+.feature-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--editor-success);
+    font-weight: bold;
+}
+
+/* =============== BUSINESS SECTION =============== */
+.business-section {
+    padding: 4rem 0;
+    background: white;
+}
+
+.business-container {
+    text-align: center;
+}
+
+.business-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--editor-primary);
+    margin-bottom: 3rem;
+}
+
+.business-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.business-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.business-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.business-text h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--editor-primary);
+    margin-bottom: 1rem;
+}
+
+.business-text ul {
+    list-style: none;
+}
+
+.business-text li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+    color: var(--editor-gray);
+}
+
+.business-text li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--editor-accent);
+    font-weight: bold;
+}
+
+/* =============== WHY SECTION =============== */
+.why-section {
+    padding: 4rem 0;
+    background: var(--editor-light);
+}
+
+.why-container {
+    text-align: center;
+}
+
+.why-container h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--editor-primary);
+    margin-bottom: 3rem;
+}
+
+.why-points {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.why-point {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid var(--editor-accent);
+}
+
+.why-point p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--editor-dark);
+}
+
+/* =============== TESTIMONIALS SECTION =============== */
+.testimonial-section {
+    padding: 4rem 0;
+    background: white;
+}
+
+.testimonial-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--editor-primary);
+    margin-bottom: 3rem;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial {
+    background: var(--editor-light);
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--editor-success);
+}
+
+.quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--editor-dark);
+    margin-bottom: 1rem;
+}
+
+.testimonial-author {
+    color: var(--editor-gray);
+    font-weight: 500;
+}
+
+/* =============== FINAL CTA SECTION =============== */
+.final-cta {
+    position: relative;
+    padding: 6rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.final-cta-background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.final-cta-content-wrapper {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: white;
+    max-width: 600px;
+}
+
+.final-cta-text h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.final-cta-text p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.final-cta-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+/* =============== FOOTER =============== */
+.footer {
+    background: var(--editor-dark);
+    color: white;
+    padding: 2rem 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-link:hover {
+    opacity: 1;
+}
+
+.footer-copyright p {
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* =============== RESPONSIVE DESIGN =============== */
+@media (max-width: 768px) {
+    .h1-hero {
+        font-size: 2.5rem;
+    }
+    
+    .p-hero {
+        font-size: 1.1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-button {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .feature-card {
+        padding: 2rem;
+    }
+    
+    .business-features {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .business-feature {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .final-cta-text h2 {
+        font-size: 2rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .h1-hero {
+        font-size: 2rem;
+    }
+    
+    .feature-card {
+        padding: 1.5rem;
+    }
+    
+    .business-feature {
+        gap: 1rem;
+    }
+}
+
+/* =============== ANIMATIONS =============== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature-card,
+.business-feature,
+.why-point,
+.testimonial {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* =============== SMOOTH SCROLLING =============== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* =============== ACCESSIBILITY =============== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Focus styles for accessibility */
+.cta-button:focus,
+.footer-link:focus {
+    outline: 2px solid var(--editor-accent);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .feature-card,
+    .business-feature,
+    .why-point,
+    .testimonial {
+        border: 2px solid var(--editor-dark);
+    }
+}
