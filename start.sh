@@ -44,7 +44,7 @@ echo ""
 # Afficher les pages disponibles
 echo "📄 Pages disponibles:"
 echo "   • Landing principale: http://localhost:8001/"
-echo "   • ZazooEditor: http://localhost:8001/zazoo-editor.html"
+echo "   • Totem: http://localhost:8001/totem.html"
 echo "   • Mentions légales: http://localhost:8001/mentions-legales.html"
 echo "   • Confidentialité: http://localhost:8001/privacy.html"
 echo ""
